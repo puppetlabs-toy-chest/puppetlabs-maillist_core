@@ -1,3 +1,4 @@
+# Manage email lists.
 module Puppet
   Type.newtype(:maillist) do
     @doc = "Manage email lists.  This resource type can only create
@@ -11,7 +12,7 @@ module Puppet
       end
 
       def change_to_s(current_value, newvalue)
-        return _("Purged %{resource}") % { resource: resource } if newvalue == :purged
+        return _('Purged %{resource}') % { resource: resource } if newvalue == :purged
         super
       end
 
@@ -21,42 +22,42 @@ module Puppet
       end
     end
 
-    newparam(:name, :namevar => true) do
-      desc "The name of the email list."
+    newparam(:name, namevar: true) do
+      desc 'The name of the email list.'
     end
 
     newparam(:description) do
-      desc "The description of the mailing list."
+      desc 'The description of the mailing list.'
     end
 
     newparam(:password) do
-      desc "The admin password."
+      desc 'The admin password.'
     end
 
     newparam(:webserver) do
-      desc "The name of the host providing web archives and the administrative interface."
+      desc 'The name of the host providing web archives and the administrative interface.'
     end
 
     newparam(:mailserver) do
-      desc "The name of the host handling email for the list."
+      desc 'The name of the host handling email for the list.'
     end
 
     newparam(:admin) do
-      desc "The email address of the administrator."
+      desc 'The email address of the administrator.'
     end
 
     def generate
-      if provider.respond_to?(:aliases)
-        should = self.should(:ensure) || :present
-        if should == :purged
-          should = :absent
-        end
-        atype = Puppet::Type.type(:mailalias)
+      return unless provider.respond_to?(:aliases)
 
-        provider.aliases.
-          reject  { |name,recipient| catalog.resource(:mailalias, name) }.
-          collect { |name,recipient| atype.new(:name => name, :recipient => recipient, :ensure => should) }
+      should = self.should(:ensure) || :present
+      if should == :purged
+        should = :absent
       end
+      atype = Puppet::Type.type(:mailalias)
+
+      provider.aliases
+              .reject { |name, _recipient| catalog.resource(:mailalias, name) }
+              .map { |name, recipient| atype.new(name: name, recipient: recipient, ensure: should) }
     end
   end
 end
