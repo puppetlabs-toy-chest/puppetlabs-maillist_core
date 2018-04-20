@@ -53,7 +53,7 @@ Puppet::Type.type(:maillist).provide(:mailman) do
     args << name
 
     raise ArgumentError, _('Mailman lists require an administrator email address') unless admin
-    args << admif
+    args << admin
 
     raise ArgumentError, _('Mailman lists require an administrator password') unless password
     args << password
