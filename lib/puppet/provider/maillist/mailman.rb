@@ -1,7 +1,6 @@
 require 'puppet/provider/parsedfile'
 
 Puppet::Type.type(:maillist).provide(:mailman) do
-
   desc 'The mailman provider for maillist'
 
   if %w[CentOS RedHat Fedora].any? { |os| Facter.value(:operatingsystem) == os }
