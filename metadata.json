@@ -8,7 +8,9 @@
   "project_page": "https://github.com/puppetlabs/puppetlabs-maillist_core/blob/master/README.md",
   "issues_url": "https://tickets.puppetlabs.com/projects/MODULES",
   "dependencies": [
-
+    {
+      "name": "puppetlabs/mailalias_core"
+    }
   ],
   "operatingsystem_support": [
     {
