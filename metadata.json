@@ -1,6 +1,6 @@
 {
   "name": "puppetlabs-maillist_core",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Puppet Labs",
   "summary": "Manage email lists.",
   "license": "Apache-2.0",
@@ -9,7 +9,8 @@
   "issues_url": "https://tickets.puppetlabs.com/projects/MODULES",
   "dependencies": [
     {
-      "name": "puppetlabs/mailalias_core"
+      "name": "puppetlabs/mailalias_core",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
     }
   ],
   "operatingsystem_support": [
