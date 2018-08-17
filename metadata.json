@@ -1,6 +1,6 @@
 {
   "name": "puppetlabs-maillist_core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Puppet Labs",
   "summary": "Manage email lists.",
   "license": "Apache-2.0",
