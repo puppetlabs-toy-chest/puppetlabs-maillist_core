@@ -1,0 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018 Puppet, Inc.
+# This file is distributed under the same license as the puppetlabs-maillist_core package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: puppetlabs-maillist_core 1.0.1-4-g6e101ce\n"
+"\n"
+"Report-Msgid-Bugs-To: docs@puppet.com\n"
+"POT-Creation-Date: 2018-08-17 14:11-0700\n"
+"PO-Revision-Date: 2018-08-17 14:11-0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../lib/puppet/provider/maillist/mailman.rb:57
+msgid "Mailman lists require an administrator email address"
+msgstr ""
+
+#: ../lib/puppet/provider/maillist/mailman.rb:60
+msgid "Mailman lists require an administrator password"
+msgstr ""
+
+#: ../lib/puppet/type/maillist.rb:15
+msgid "Purged %{resource}"
+msgstr ""
