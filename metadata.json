@@ -1,6 +1,6 @@
 {
   "name": "puppetlabs-maillist_core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Puppet Labs",
   "summary": "Manage email lists.",
   "license": "Apache-2.0",
@@ -78,7 +78,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.7.0 < 6.0.0"
+      "version_requirement": ">= 6.0.0 < 7.0.0"
     }
   ],
   "pdk-version": "1.4.1",
