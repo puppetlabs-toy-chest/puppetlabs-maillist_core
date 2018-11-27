@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Puppet::Type.type(:maillist) do
+describe Puppet::Type.type(:maillist), type: :type do
   let(:maillist) do
     described_class.new(
       name: 'dummy',
