@@ -30,9 +30,9 @@ This example will create a new mail list called craft_circle.
 
 The mailalias module is used to manage entries in `/etc/aliases`, which creates an email alias in the local alias database.
 
-For details on usage, please see [the puppet docs](https://puppet.com/docs/puppet/latest/types/maillist.html).
-
 ## Reference
+
+Please see [`REFERENCE.md`](REFERENCE.md) for the reference documentation.
 
 This module is documented using Puppet Strings.
 
