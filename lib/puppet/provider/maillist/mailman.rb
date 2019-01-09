@@ -3,7 +3,7 @@ require 'puppet/provider/parsedfile'
 Puppet::Type.type(:maillist).provide(:mailman) do
   desc 'The mailman provider for maillist'
 
-  if %w[CentOS RedHat Fedora].any? { |os| Facter.value(:operatingsystem) == os }
+  if ['CentOS', 'RedHat', 'Fedora'].any? { |os| Facter.value(:operatingsystem) == os }
     commands list_lists: '/usr/lib/mailman/bin/list_lists', rmlist: '/usr/lib/mailman/bin/rmlist', newlist: '/usr/lib/mailman/bin/newlist'
     commands mailman: '/usr/lib/mailman/mail/mailman'
   else
@@ -35,7 +35,7 @@ Puppet::Type.type(:maillist).provide(:mailman) do
     mailman = self.class.command(:mailman)
     name = self.name.downcase
     aliases = { name => "| #{mailman} post #{name}" }
-    %w[admin bounces confirm join leave owner request subscribe unsubscribe].each do |address|
+    ['admin', 'bounces', 'confirm', 'join', 'leave', 'owner', 'request', 'subscribe', 'unsubscribe'].each do |address|
       aliases["#{name}-#{address}"] = "| #{mailman} #{address} #{name}"
     end
     aliases

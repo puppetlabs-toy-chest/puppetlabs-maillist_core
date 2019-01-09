@@ -24,7 +24,7 @@ describe Puppet::Type.type(:maillist), type: :type do
 
     allow(provider).to receive(:aliases).and_return('test1' => 'this will get included', 'test2' => 'this will dropped', 'test3' => 'this will get included')
     generated = maillist.generate
-    expect(generated.map { |x| x.name  }.sort).to eq(%w[test1 test3])
+    expect(generated.map { |x| x.name  }.sort).to eq(['test1', 'test3'])
     expect(generated.map { |x| x.class }).to      eq([Puppet::Type::Mailalias, Puppet::Type::Mailalias])
   end
 end
